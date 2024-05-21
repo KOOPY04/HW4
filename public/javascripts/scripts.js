@@ -3,21 +3,24 @@ document.getElementById('searchForm').addEventListener('submit', function(event)
 
     var formData = new FormData(this);
     var searchParams = new URLSearchParams(formData).toString();
+
     const startYear = document.getElementById('startYear').value;
     const endYear = document.getElementById('endYear').value;
 
+    // 檢查結束年分是否≥開始年分
     if (parseInt(endYear) < parseInt(startYear)) {
-        alert("结束年份必须大于开始年份。");
+        alert("結束年份必須≥開始年分");
         return;
     }
 
-    // Check if any yuzu type is selected
+    // 檢查是否選擇柚子品種
     var selectedYuzuTypes = Array.from(document.querySelectorAll('.yuzuType input[type="checkbox"]:checked')).map(checkbox => checkbox.value);
     if (selectedYuzuTypes.length === 0) {
-        alert("请至少选择一个柚子品种。");
+        alert("請至少選擇一種柚子品種");
         return;
     }
 
+    // 獲取數據
     fetch('/search?' + searchParams)
         .then(response => response.json())
         .then(data => {
@@ -31,7 +34,6 @@ document.getElementById('searchForm').addEventListener('submit', function(event)
                 var headerRow = table.insertRow(0);
                 var columns = ['Year'];
 
-                // Get selected yuzu types
                 if (selectedYuzuTypes.includes('all')) {
                     columns.push('Wendan', 'GrapeFruit', 'XishiYuzu');
                 } else {

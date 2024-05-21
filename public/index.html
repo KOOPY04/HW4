@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yuzu Price Database</title>
+  <title>柚子各品種價格變化</title>
   <link rel="stylesheet" href="stylesheets/style.css">
 </head>
 <body>
-<h1>柚子各品種價格變化(1999~2023)</h1>
+<h1>柚子各品種價格變化</h1>
 
+<!-- 年份下拉搜尋 -->
 <form id="searchForm">
   <label for="startYear">日期範圍：</label>
+  <!-- 選擇起始年份 -->
   <select id="startYear" name="startYear">
     <option value="">All</option>
-    <!-- Populate options for years 1999 to 2023 -->
-    <!-- You can also automate this process using a loop in JavaScript -->
     <option value="1999">1999</option>
     <option value="2000">2000</option>
     <option value="2001">2001</option>
@@ -43,10 +43,9 @@
   </select>
 
   <label for="endYear">至</label>
+  <!-- 選擇結束年份 -->
   <select id="endYear" name="endYear">
     <option value="">All</option>
-    <!-- Populate options for years 1999 to 2023 -->
-    <!-- You can also automate this process using a loop in JavaScript -->
     <option value="1999">1999</option>
     <option value="2000">2000</option>
     <option value="2001">2001</option>
@@ -74,8 +73,10 @@
     <option value="2023">2023</option>
   </select>
 
+  <!-- 柚子品種選擇 -->
   <fieldset class="yuzuType">
     <legend>柚子品種：</legend>
+    <!-- 品種選項 -->
     <input type="checkbox" id="Wendan" name="yuzuType" value="Wendan">
     <label for="Wendan">文旦</label><br>
     <input type="checkbox" id="GrapeFruit" name="yuzuType" value="GrapeFruit">
@@ -84,9 +85,12 @@
     <label for="XishiYuzu">西施柚</label><br>
   </fieldset>
 
+  <!-- 搜尋 -->
   <button type="submit">Search</button>
 </form>
 
+
+<!-- 搜尋結果 -->
 <div id="result"></div>
 
 <script src="javascripts/scripts.js"></script>
