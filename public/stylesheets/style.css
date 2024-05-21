@@ -1,0 +1,156 @@
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background-color: #f9f9f4; /* 淡黄色背景，类似于柚子 */
+  color: #333; /* 文字颜色 */
+}
+
+/* Heading Styles */
+h1 {
+  text-align: center;
+  color: #838b5a; /* 深绿色标题 */
+  font-size: 2em;
+  font-family: "Brush Script MT", "Brush Script Std", cursive;
+  margin-bottom: 30px; /* 增加底部空间 */
+}
+
+/* Form Styles */
+form {
+  margin-bottom: 30px; /* 增加底部空间 */
+  text-align: center;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 增加阴影 */
+}
+
+fieldset {
+  border: 1px solid #ccc; /* 设置fieldset边框 */
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+legend {
+  font-weight: bold;
+  color: #838b5a; /* 设置legend颜色 */
+  padding: 0 10px; /* 增加内边距 */
+}
+
+label {
+  display: inline-block;
+  width: 120px; /* 设置标签宽度 */
+  color: #555; /* 标签文字颜色 */
+  margin: 5px 0; /* 增加上下间距 */
+}
+
+select {
+  width: 220px; /* 设置选择框宽度 */
+  padding: 10px; /* 增加内边距 */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 5px 0; /* 增加上下间距 */
+}
+
+input[type="checkbox"] {
+  display: none; /* 隐藏原始复选框 */
+}
+
+input[type="checkbox"] + label {
+  position: relative;
+  padding-left: 25px;
+  cursor: pointer;
+  color: #838b5a; /* 标签颜色 */
+  margin: 5px 0; /* 增加上下间距 */
+}
+
+input[type="checkbox"] + label:before {
+  content: '';
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #b9b973; /* 边框颜色 */
+  border-radius: 3px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #fff;
+}
+
+input[type="checkbox"]:checked + label:before {
+  background-color: #b9b973; /* 选中后的背景颜色 */
+}
+
+input[type="checkbox"]:checked + label:after {
+  content: '✔';
+  display: inline-block;
+  color: white; /* 勾选符号颜色 */
+  position: absolute;
+  left: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Button Styles */
+button[type="submit"] {
+  padding: 10px 20px;
+  background-color: #F5A623FF; /* 按钮背景颜色 */
+  color: #fff; /* 按钮文字颜色 */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  margin-top: 10px; /* 增加顶部空间 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 增加阴影 */
+  transition: background-color 0.3s; /* 增加过渡效果 */
+}
+
+button[type="submit"]:hover {
+  background-color: #ffe38e; /* 鼠标悬停时的背景颜色 */
+}
+
+/* Result Styles */
+#result {
+  margin-top: 20px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 增加阴影 */
+}
+
+/* Table Styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background-color: #fff;
+}
+
+table, th, td {
+  border: 1px solid #ccc;
+}
+
+th, td {
+  padding: 12px;
+  text-align: center;
+  color: #333;
+}
+
+th {
+  background-color: #838b5a; /* 表头背景颜色 */
+  color: white; /* 表头文字颜色 */
+  border-bottom: 2px solid #ccc; /* 表头底部边框 */
+}
+
+td {
+  background-color: #f9f9f4; /* 单元格背景颜色 */
+}

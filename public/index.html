@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yuzu Price Database</title>
+  <link rel="stylesheet" href="stylesheets/style.css">
+</head>
+<body>
+<h1>柚子各品種價格變化(1999~2023)</h1>
+
+<form id="searchForm">
+  <label for="startYear">日期範圍：</label>
+  <select id="startYear" name="startYear">
+    <option value="">All</option>
+    <!-- Populate options for years 1999 to 2023 -->
+    <!-- You can also automate this process using a loop in JavaScript -->
+    <option value="1999">1999</option>
+    <option value="2000">2000</option>
+    <option value="2001">2001</option>
+    <option value="2002">2002</option>
+    <option value="2003">2003</option>
+    <option value="2004">2004</option>
+    <option value="2005">2005</option>
+    <option value="2006">2006</option>
+    <option value="2007">2007</option>
+    <option value="2008">2008</option>
+    <option value="2009">2009</option>
+    <option value="2010">2010</option>
+    <option value="2011">2011</option>
+    <option value="2012">2012</option>
+    <option value="2013">2013</option>
+    <option value="2014">2014</option>
+    <option value="2015">2015</option>
+    <option value="2016">2016</option>
+    <option value="2017">2017</option>
+    <option value="2018">2018</option>
+    <option value="2019">2019</option>
+    <option value="2020">2020</option>
+    <option value="2021">2021</option>
+    <option value="2022">2022</option>
+    <option value="2023">2023</option>
+  </select>
+
+  <label for="endYear">至</label>
+  <select id="endYear" name="endYear">
+    <option value="">All</option>
+    <!-- Populate options for years 1999 to 2023 -->
+    <!-- You can also automate this process using a loop in JavaScript -->
+    <option value="1999">1999</option>
+    <option value="2000">2000</option>
+    <option value="2001">2001</option>
+    <option value="2002">2002</option>
+    <option value="2003">2003</option>
+    <option value="2004">2004</option>
+    <option value="2005">2005</option>
+    <option value="2006">2006</option>
+    <option value="2007">2007</option>
+    <option value="2008">2008</option>
+    <option value="2009">2009</option>
+    <option value="2010">2010</option>
+    <option value="2011">2011</option>
+    <option value="2012">2012</option>
+    <option value="2013">2013</option>
+    <option value="2014">2014</option>
+    <option value="2015">2015</option>
+    <option value="2016">2016</option>
+    <option value="2017">2017</option>
+    <option value="2018">2018</option>
+    <option value="2019">2019</option>
+    <option value="2020">2020</option>
+    <option value="2021">2021</option>
+    <option value="2022">2022</option>
+    <option value="2023">2023</option>
+  </select>
+
+  <fieldset class="yuzuType">
+    <legend>柚子品種：</legend>
+    <input type="checkbox" id="Wendan" name="yuzuType" value="Wendan">
+    <label for="Wendan">文旦</label><br>
+    <input type="checkbox" id="GrapeFruit" name="yuzuType" value="GrapeFruit">
+    <label for="GrapeFruit">葡萄柚</label><br>
+    <input type="checkbox" id="XishiYuzu" name="yuzuType" value="XishiYuzu">
+    <label for="XishiYuzu">西施柚</label><br>
+  </fieldset>
+
+  <button type="submit">Search</button>
+</form>
+
+<div id="result"></div>
+
+<script src="javascripts/scripts.js"></script>
+</body>
+</html>
+
+
+
