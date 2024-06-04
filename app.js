@@ -15,7 +15,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// 連接到SQLite資料庫
 var db = new sqlite3.Database('db/sqlite.db', (err) => {
     if (err) {
         console.error('Could not open database', err.message);
@@ -27,32 +26,34 @@ var db = new sqlite3.Database('db/sqlite.db', (err) => {
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
-// 定義 /search 路由處理函數
-router.get('/search', function(req, res, next) {
+app.get('/search', function(req, res, next) {
     var query = req.query;
     var startYear = query.startYear || '';
     var endYear = query.endYear || '';
     var yuzuTypes = Array.isArray(query.yuzuType) ? query.yuzuType : [query.yuzuType];
 
-    // SQL 查詢
     var sql = 'SELECT Year';
     var params = [];
 
+    if (yuzuTypes.includes('all') || yuzuTypes.length === 0) {
+        sql += ', Wendan, GrapeFruit, XishiYuzu';
+    } else {
+        yuzuTypes.forEach(type => {
+            sql += `, ${type}`;
+        });
+    }
 
     sql += ' FROM YuzuPrices WHERE 1=1';
 
-    // 起始年份篩選條件
     if (startYear) {
         sql += ' AND Year >= ?';
         params.push(startYear);
     }
-    // 結束年份篩選條件
     if (endYear) {
         sql += ' AND Year <= ?';
         params.push(endYear);
     }
 
-    // 執行查詢
     db.all(sql, params, (err, rows) => {
         if (err) {
             console.error('查詢執行錯誤', err.message);
@@ -62,7 +63,5 @@ router.get('/search', function(req, res, next) {
         }
     });
 });
-
-
 
 module.exports = app;

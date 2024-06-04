@@ -11,14 +11,53 @@ body {
   color: #333;
 }
 
-h1 {
+nav {
+  background-color: #838b5a;
+  padding: 10px 0;
+  margin-bottom: 30px;
+}
+
+nav ul {
+  list-style: none;
+  text-align: center;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2em;
+}
+
+h1, h2 {
   text-align: center;
   color: #838b5a;
+}
+
+h1 {
   font-size: 2em;
   font-family: "Brush Script MT", "Brush Script Std", cursive;
   margin-bottom: 30px;
 }
 
+h2 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+#trendAnalysis {
+  text-align: center;
+  margin-bottom: 20px; /* 可以根據需要調整上下邊距 */
+}
+
+
+section {
+  margin-bottom: 30px;
+}
 
 form {
   margin-bottom: 30px;
@@ -57,9 +96,8 @@ select {
   margin: 5px 0;
 }
 
-/* 複選框設定 */
 input[type="checkbox"] {
-  display: none; /* 隱藏原本複選框 */
+  display: none;
 }
 
 input[type="checkbox"] + label {
@@ -91,7 +129,7 @@ input[type="checkbox"]:checked + label:before {
 input[type="checkbox"]:checked + label:after {
   content: '✔';
   display: inline-block;
-  color: white; /* 勾選符號顏色 */
+  color: white;
   position: absolute;
   left: 4px;
   top: 50%;
@@ -115,12 +153,34 @@ button[type="submit"]:hover {
   background-color: #ffe38e;
 }
 
+.exportBtn{
+  padding: 10px 20px;
+  background-color: #F5A623FF;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s;
+}
+
+.exportBtn:hover{
+  background-color: #ffe38e;
+}
+
 #result {
+  border: none; /* 初始設置為無底框 */
   margin-top: 20px;
   background-color: #fff;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+#result.showBorder {
+  border: 1px solid #ccc; /* 添加底框的 CSS 類 */
 }
 
 table {
@@ -148,4 +208,15 @@ th {
 
 td {
   background-color: #f9f9f4;
+}
+
+#chartContainer {
+  width: 80%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 2px solid #838b5a;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }

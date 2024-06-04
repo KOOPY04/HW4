@@ -5,15 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>柚子各品種價格變化</title>
   <link rel="stylesheet" href="stylesheets/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- 引入 Chart.js -->
 </head>
 <body>
+<!-- 導覽欄 -->
+<nav>
+  <ul>
+    <li><a href="#">首頁</a></li>
+    <li><a href="#searchForm">歷史價格</a></li>
+    <li><a href="#trends">數據趨勢</a></li>
+  </ul>
+</nav>
+
 <h1>柚子各品種價格變化</h1>
 
-<!-- 年份下拉搜尋 -->
+<!-- 簡介 -->
+<section id="intro">
+  <p>歡迎來到柚子價格查詢網站，在這裡你可以查詢各品種柚子的歷史價格變化，了解市場趨勢。</p>
+</section>
+
+<!-- 搜尋表單 -->
 <form id="searchForm">
+  <h2>查詢歷史價格</h2>
   <label for="startYear">日期範圍：</label>
-  <!-- 選擇起始年份 -->
   <select id="startYear" name="startYear">
+    <!-- 年份選項... -->
     <option value="">All</option>
     <option value="1999">1999</option>
     <option value="2000">2000</option>
@@ -41,10 +57,9 @@
     <option value="2022">2022</option>
     <option value="2023">2023</option>
   </select>
-
   <label for="endYear">至</label>
-  <!-- 選擇結束年份 -->
   <select id="endYear" name="endYear">
+    <!-- 年份選項... -->
     <option value="">All</option>
     <option value="1999">1999</option>
     <option value="2000">2000</option>
@@ -73,10 +88,8 @@
     <option value="2023">2023</option>
   </select>
 
-  <!-- 柚子品種選擇 -->
   <fieldset class="yuzuType">
     <legend>柚子品種：</legend>
-    <!-- 品種選項 -->
     <input type="checkbox" id="Wendan" name="yuzuType" value="Wendan">
     <label for="Wendan">文旦</label><br>
     <input type="checkbox" id="GrapeFruit" name="yuzuType" value="GrapeFruit">
@@ -85,17 +98,28 @@
     <label for="XishiYuzu">西施柚</label><br>
   </fieldset>
 
-  <!-- 搜尋 -->
   <button type="submit">Search</button>
+  <!-- 導出按鈕 -->
+  <button class="exportBtn" id="exportBtn" style="display: none;">導出 CSV</button>
 </form>
 
 
 <!-- 搜尋結果 -->
 <div id="result"></div>
 
+
+<!-- 數據趨勢 -->
+<section id="trends">
+  <h2>數據趨勢</h2>
+  <div id="trendAnalysis">
+    這裡將展示不同品種柚子價格的長期趨勢分析和比較。
+  </div>
+
+  <div id="chartContainer">
+    <canvas id="trendChart"></canvas> <!-- 折線圖畫布 -->
+  </div>
+</section>
+
 <script src="javascripts/scripts.js"></script>
 </body>
 </html>
-
-
-
